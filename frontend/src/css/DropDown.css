@@ -1,0 +1,14 @@
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown-background {
+  background: none;
+  color: blue;
+  border: none;
+}
+.btn:first-child:hover, :not(.btn-check)+.btn:hover {
+  color: blue;
+  background: none !important;
+  border-color: none;
+}
