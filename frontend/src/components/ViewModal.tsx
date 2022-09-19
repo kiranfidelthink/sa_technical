@@ -10,7 +10,7 @@ const ViewProject = (props: any) => {
   useEffect(() => {
     if (Object.keys(props).length !== 0) {
       let realObj = props.props.data.rows.find((item: any, index: any) => {
-        return index == props.props.data.index;
+        return index === props.props.data.index;
       })
       setFinalData(realObj)
     }

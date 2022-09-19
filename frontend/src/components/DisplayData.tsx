@@ -28,7 +28,10 @@ const DisplayData = () => {
     if (e?.default !== true) {
       e.preventDefault();
     }
-
+    if(e.target[0].value === ''){
+      setIsError(`Please enter user id`)
+      return;
+    }
     let userId = e.target[0].value;
     localStorage.setItem("userID", userId)
     setIsLoading(true);
@@ -73,7 +76,7 @@ const DisplayData = () => {
         setIsCreate(false);
         setData([]);
         setFilterData([]);
-        setIsError(`User with give id does not exist`)
+        setIsError(`User with given id does not exist`)
         setIsLoading(false);
       })
   }
