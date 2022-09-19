@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  nest:
+    container_name: nest
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - postgres
+    links:
+      - postgres:postgres      
+
+  postgres:
+    image: postgres:11.10
+    hostname: postgres
+    environment:
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=crudjs
+        - POSTGRES_DB=nestdb
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+volumes:
+  data-volume:      
